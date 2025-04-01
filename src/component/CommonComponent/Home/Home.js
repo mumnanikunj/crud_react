@@ -1,3 +1,4 @@
+import Counter from "./Innercomponent/counter"
 
 
 const Home = () =>{
@@ -11,6 +12,7 @@ const Home = () =>{
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </div>
+            <Counter/>
         </div>
     )
 }
