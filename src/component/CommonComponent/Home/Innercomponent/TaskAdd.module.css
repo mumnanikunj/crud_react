@@ -1,5 +1,7 @@
 
-
+.TitleStyle{
+    margin-top: '100px';
+}
 .formStyle {
     display: flex;
     flex-direction: column;

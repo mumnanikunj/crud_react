@@ -29,8 +29,8 @@ const TaskAdd = () => {
   };
 
   return (
-    <div>
-      <h1>Task Add</h1>
+    <div>  
+      <h1 className={styles.TitleStyle}>Task Add</h1>
       <div>
         <form className={styles.formStyle}>
           <input
