@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-let idCounter = 1;
+let idCounter = new Date();
 
 
 
@@ -9,7 +9,7 @@ const taskSlice = createSlice({
   initialState: [],
   reducers: {
     addTask: (state , action) => {
-      state.push({ id: idCounter++, ...action.payload });
+      state.push({ id: idCounter, ...action.payload });
     },
     updateTask: (state, action) => {
       const { id, title, description } = action.payload;

@@ -11,7 +11,8 @@ const TaskAdd = () => {
   const [description, setDescription] = useState("");
   const [editId, setEditId] = useState(null);
 
-  const handleAddOrUpdate = () => {
+  const handleAddOrUpdate = (e) => {
+    e.preventDefault(); 
     if (editId) {
       dispatch(updateTask({ id: editId, title, description }));
       setEditId(null);
@@ -32,7 +33,7 @@ const TaskAdd = () => {
     <div>  
       <h1 className={styles.TitleStyle}>Task Add</h1>
       <div>
-        <form className={styles.formStyle}>
+        <form className={styles.formStyle} onSubmit={handleAddOrUpdate}>
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -45,7 +46,7 @@ const TaskAdd = () => {
             placeholder="Description"
             className={styles.commonStyle}
           />
-          <button onClick={handleAddOrUpdate}>Add Task</button>
+          <button type="submit" >{editId ? 'Edit Task' : 'Add Task'}</button>
         </form>
 
         {tasks?.map((item, index) => (
@@ -63,7 +64,7 @@ const TaskAdd = () => {
                 Edit
               </button>
               <button
-                onClick={() => dispatch(deleteTask(item))}
+                onClick={() => dispatch(deleteTask(item.id))}
                 style={{ color: "red" }}
               >
                 Delete
