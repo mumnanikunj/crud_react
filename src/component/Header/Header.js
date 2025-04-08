@@ -1,73 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-
-// const Header = () => {
-//   const navigate = useNavigate();
-//   const [showHeader, setShowHeader] = useState(true);
-//   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
-
-//   const handleScroll = () => {
-//     if (window.scrollY < lastScrollY) {
-
-//       setShowHeader(true);
-//     } else {
-//       setShowHeader(true);
-//     }
-//     setLastScrollY(window.scrollY);
-//   };
-
-//   useEffect(() => {
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, [lastScrollY]);
-
-//   return (
-//     <header
-//       style={{
-//         ...styles.header,
-//         // transform: showHeader ? "translateY(0)" : "translateY(100%)",
-//       }}
-//     >
-//       <div style={styles.leftside}></div>
-//       <span style={styles.text} onClick={() => navigate("/")}>
-//         Home
-//       </span>
-//       <span style={styles.text} onClick={() => navigate("/about")}>
-//         About
-//       </span>
-//       <span style={styles.text} onClick={() => navigate("/contact")}>
-//         Contact Us
-//       </span>
-//     </header>
-//   );
-// };
-
-// const styles = {
-//   header: {
-//     top: 0,
-//     left: 0,
-//     right: 0,
-//     display: "flex",
-//     flexDirection: "row",
-//     justifyContent: "space-between",
-//     alignItems: "center",
-//     padding: "15px 20px",
-//     backgroundColor: "#6200ee",
-
-//   },
-//   leftside: {
-//     width: "50%",
-//   },
-//   text: {
-//     color: "white",
-//     fontSize: "18px",
-//     fontWeight: "bold",
-//     cursor: "pointer",
-//   },
-// };
-
-// export default Header;
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -109,11 +39,14 @@ const Header = () => {
         <span style={styles.text} onClick={() => navigate("/")}>
           Home
         </span>
-        <span style={styles.text} onClick={() => navigate("/about")}>
+        <span style={styles.text} onClick={() => navigate("/About")}>
           About
         </span>
-        <span style={styles.text} onClick={() => navigate("/contact")}>
+        <span style={styles.text} onClick={() => navigate("/Contact")}>
           Contact Us
+        </span>
+        <span style={styles.text} onClick={() => navigate("/VideoCallPage")}>
+        VideoCallPage
         </span>
       </nav>
     </header>
